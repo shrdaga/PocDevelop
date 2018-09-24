@@ -1,0 +1,30 @@
+<project name="ANT Jobs" basedir="." xmlns:sf="antlib:com.salesforce">
+	<tstamp>
+		<format property="BUILD_DATE"
+		        pattern="yyyyMMdd" />
+	</tstamp>
+	<condition property="sf.deploy.username" value="">
+		<not>
+			<isset property="sf.deploy.username" />
+		</not>
+	</condition>
+	<condition property="sf.deploy.password" value="">
+		<not>
+			<isset property="sf.deploy.password" />
+		</not>
+	</condition>
+	<condition property="sf.deploy.sessionId" value="">
+		<not>
+			<isset property="sf.deploy.sessionId" />
+		</not>
+	</condition>
+	<taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+		<classpath>
+			<pathelement location="C:\Jenkins\workspace\migration_tool/ant-salesforce.jar" />
+		</classpath>
+	</taskdef>
+	<!-- ========================================== -->
+	<!-- Deployment targets                         -->
+	<!-- ========================================== -->
+
+</project>
